@@ -1,0 +1,36 @@
+<div class="card my-5">
+    <div class="card-body">
+    
+        <div class="form-group">
+          <label for="article">Article</label>
+          <p id="article" name="article"> {{'id : ' + articleCommande.article.id + ', name : ' + articleCommande.article.name }}</p> 
+        </div>
+        
+        <div class="form-group">
+            <label for="quantite">Quantite </label>
+            <p id="quantite" name="quantite"> {{ articleCommande.quantite }} </p> 
+        </div>
+
+        <div class="form-group">
+            <label for="commande">Commande </label>
+            <p id="commande" name="commande"> {{'id : ' + articleCommande.commande.id + ', numeroCommande : ' + articleCommande.commande.numeroCommande }} </p> 
+        </div>
+
+       
+          <button (click)="modifierArticleCommande()" class="btn btn-primary">Modifier ArticleCommande</button>
+          <button (click)="supprimerArticleCommande()" class="btn btn-danger">Supprimer ArticleCommande</button>
+  </div>
+
+
+        </div>
+        
+
+           
+   
+       
+
+  <div *ngIf="formModified && +articleCommande.id>0">
+    <app-articleCommande-form
+      [articleCommande]="articleCommande">
+    </app-articleCommande-form>
+  </div>

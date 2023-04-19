@@ -1,0 +1,27 @@
+<h1> Tableau des articles </h1>
+
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Numéro</th>
+            <th scope="col">Name</th>
+            <th scope="col">Prix Unitaire</th>
+            <th scope="col">Categorie</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let article of articles">
+            <td> <a href="http://localhost:4200/articles/{{ article.id }}"> {{ article.id }}</a></td>
+            <td>{{ article.name }}</td>
+            <td>{{ article.prixUnitaire }}</td>
+            <td>{{ article.categorie.name }}</td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

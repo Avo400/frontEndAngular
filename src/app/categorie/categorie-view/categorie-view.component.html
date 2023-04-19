@@ -1,0 +1,26 @@
+<div class="card my-5">
+    <div class="card-body">
+    
+        <div class="form-group">
+          <label for="name">Name</label>
+          <p id="name" name="name"> {{ categorie.name }} </p> 
+        </div>
+        
+      
+          <button (click)="modifierCategorie()" class="btn btn-primary">Modifier Categorie</button>
+          <button (click)="supprimerCategorie()" class="btn btn-danger">Supprimer Categorie</button>
+  </div>
+
+
+        </div>
+        
+
+           
+   
+       
+
+  <div *ngIf="formModified && +categorie.id>0">
+    <app-categorie-form
+      [categorie]="categorie">
+    </app-categorie-form>
+  </div>

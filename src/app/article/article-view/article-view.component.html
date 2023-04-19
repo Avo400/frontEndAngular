@@ -1,0 +1,31 @@
+<div class="card my-5">
+    <div class="card-body">
+    
+        <div class="form-group">
+          <label for="name">Name :</label>
+          <p id="name" name="name"> {{ article.name }} </p> 
+           
+        </div>
+          <div class="form-group">
+          <label for="categorie">Categorie :  </label>
+          <p id="categorie" name="categorie">  {{article.categorie.name}} </p> 
+      </div>
+        
+        <div class="form-group">
+          <p>prixUnitaire</p>
+          <p> {{ article.prixUnitaire }} </p>
+            </div>
+                    <button (click)="modifierArticle()" class="btn btn-primary">Modifier Article</button>
+                    <button (click)="supprimerArticle()" class="btn btn-danger">Supprimer Article</button>
+            </div>
+   
+        </div>
+
+        
+      
+
+  <div *ngIf="formModified && +article.id>0">
+    <app-article-form
+      [article]="article">
+    </app-article-form>
+  </div>

@@ -1,0 +1,58 @@
+<div class="card my-5">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" [(ngModel)]="client.name" 
+            class="form-control" 
+            id="name" 
+            name="name" 
+            placeholder="Entrez le nom "
+            required #name="ngModel">
+        </div>
+        
+        
+        <div class="form-group">
+          <label for="firstname">Firstname</label>
+          <input type="text" [(ngModel)]="client.firstName" 
+            class="form-control" 
+            id="firstname" 
+            name="firstname" 
+            placeholder="Entrez votre nom de famille"
+            required #firstname="ngModel">
+          
+        </div>
+
+        <div class="form-group"> 
+            <label for="adresse">Adresse</label> 
+           {{client.adresse.numeroRue + ' '+ client.adresse.rue +' ' +  client.adresse.codePostal + ' ' + client.adresse.ville}}
+           
+          <select class="form-control" id="adresse" name="adresse" [(ngModel)]="client.adresse" 
+              (ngModelChange)="onAdresseChange($event)">
+              
+            <option *ngFor="let adresse of adresses" [ngValue]="adresse" 
+              [attr.selected]="client.adresse.id===adresse.id ? true: null">
+              {{adresse.numeroRue + ' '+ adresse.rue +' ' +  adresse.codePostal + ' ' + adresse.ville}} 
+            </option>
+          </select>
+       
+          </div>
+
+          
+
+          <div class="form-group">
+            <label for="birthDate">Date de naissance</label>
+            <input type="text" [(ngModel)]="client.birthDate" 
+              class="form-control" 
+              id="birthDate" 
+              name="birthDate" 
+              placeholder="Entrez votre prix unitaire"
+              required #birthDate="ngModel">
+            
+          </div>
+
+        <button type="submit" [disabled]="!userForm.form.valid" 
+          class="btn btn-info">Submit</button>
+      </form>
+    </div>
+</div>

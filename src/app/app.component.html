@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card bg-dark my-5">
+        <div class="card-body">
+          <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
+          <ul class="text-center list-inline py-3">
+            <li id="container">
+              <a class="flex-item" routerLink="/adresses" class="btn btn-info" >Lister adresses</a>
+               <a class="flex-item" routerLink="/clients" class="btn btn-info ">Lister clients</a>
+               <a class="flex-item" routerLink="/commandes" class="btn btn-info ">Lister commandes</a>
+              <a class="flex-item" routerLink="/articles" class="btn btn-info ">Lister articles</a>
+              <a class="flex-item"routerLink="/categories" class="btn btn-info ">Lister categories</a>
+              <a class="flex-item"routerLink="/passerCommandes" class="btn btn-info ">Passer commande </a>
+              <a class="flex-item"routerLink="/articleCommandes" class="btn btn-info ">Lister article Commandes </a>
+
+
+
+              
+             
+            </li>
+           
+          </ul>
+        </div>
+      </div>
+      <router-outlet></router-outlet>
+      <ng-confirm></ng-confirm>
+    </div>
+  </div>
+</div>
+ 

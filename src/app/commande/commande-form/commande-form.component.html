@@ -1,0 +1,59 @@
+<div class="card my-5">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+        <div class="form-group">
+          <label for="numeroCommande">Numéro commande</label>
+          <input type="text" [(ngModel)]="commande.numeroCommande" 
+            class="form-control" 
+            id="numeroCommande" 
+            name="numeroCommande" 
+            placeholder="Entrez le nom "
+            required #numeroCommande="ngModel">
+        </div>
+        
+        
+        <div class="form-group">
+          <label for="dateCommande">Date commande </label>
+          <input type="text" [(ngModel)]="commande.dateCommande" 
+            class="form-control" 
+            id="dateCommande" 
+            name="dateCommande" 
+            placeholder="Entrez votre prix unitaire"
+            required #dateCommande="ngModel">
+          
+        </div>
+
+        <div class="form-group">
+            <label for="client"> 
+                Client 
+                <!-- <span *ngIf="!weAreFromPasserCommande">: {{'id : '+ commande.client.id +', '+ commande.client.name+ ' ' + commande.client.firstName }} </span>  -->
+                {{'id : '+ commande.client.id +', '+ commande.client.name+ ' ' + commande.client.firstName }}
+            
+              </label>
+            <select class="form-control" id="client" name="client" [(ngModel)]="commande.client" 
+            (ngModelChange)="onClientChange($event)">
+            <option *ngFor="let client of clients" [ngValue]="client" 
+                [attr.selected]="commande.client.id===client.id ? true: null">
+                {{'id : '+ client.id + ', ' + client.name + ' ' + client.firstName}} 
+            </option>
+        </select>
+            
+          </div>
+
+          
+
+        <button type="submit" [disabled]="!userForm.form.valid" 
+          class="btn btn-info" *ngIf="!weAreFromPasserCommande">Enregistrer</button>
+        </form>
+
+       
+
+
+          <div id="buttonContainer" *ngIf="weAreFromPasserCommande">
+              <button  class="btn btn-info" id="flex-item" > <a href="http://localhost:4200/commandes">Annuler</a> </button>
+              <button type="submit"  class="btn btn-info" id="flex-item"  (click)="addCommandeWithGetCommande()"> Suivant </button>
+          </div>
+        
+          
+    </div>
+  </div>

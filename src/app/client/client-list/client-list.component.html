@@ -1,0 +1,31 @@
+<h1> Tableau des clients </h1>
+
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Numéro</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Prénom</th>
+            <th scope="col"><a href="http://localhost:4200/adresses">Adresses</a> </th>
+            <th scope="col">Date de naissance</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let client of clients">
+            <td> <a href="http://localhost:4200/clients/{{ client.id }}"> {{ client.id }}</a></td>
+            <td>{{ client.name }}</td>
+            <td>{{ client.firstName }}</td>
+            <td>{{ client.adresse.numeroRue + ' '+ client.adresse.rue +' ' +  client.adresse.codePostal + ' ' + client.adresse.ville}} </td>
+            <td>{{ client.birthDate}}</td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+
+

@@ -1,0 +1,29 @@
+<h1> Tableau des adresses </h1>
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Numéro</th>
+            <th scope="col">Rue</th>
+            <th scope="col">N° rue</th>
+            <th scope="col">Code postal</th>
+            <th scope="col">Ville</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let adresse of adresses">
+            <td> <a href="http://localhost:4200/adresses/{{ adresse.id }}"> {{ adresse.id }}</a></td>
+            <td>{{ adresse.rue }}</td>
+            <td>{{ adresse.numeroRue }}</td>
+            <td>{{ adresse.codePostal }}</td>
+            <td>{{ adresse.ville }}</td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+

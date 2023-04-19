@@ -1,0 +1,6 @@
+#container {
+    display: flex;
+    justify-content: space-around; /* Can be changed in the live sample */
+  }
+
+  

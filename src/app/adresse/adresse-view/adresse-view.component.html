@@ -1,0 +1,39 @@
+<div class="card my-5">
+    <div class="card-body">
+    
+        <div class="form-group">
+          <label for="rue">Rue</label>
+          <p id="rue" name="rue"> {{ adresse.rue }} </p> 
+        </div>
+        
+        <div class="form-group">
+            <label for="numeroRue">N° Rue : </label>
+            <p id="numeroRue" name="numeroRue"> {{ adresse.numeroRue }} </p> 
+        </div>
+
+        <div class="form-group">
+            <label for="codePostal">Code Postal </label>
+            <p id="codePostal" name="codePostal"> {{ adresse.codePostal }} </p> 
+        </div>
+
+        <div class="form-group">
+            <label for="ville">Ville </label>
+            <p id="ville" name="ville"> {{ adresse.ville }} </p> 
+          </div>
+          <button (click)="modifierAdresse()" class="btn btn-primary">Modifier Adresse</button>
+          <button (click)="supprimerAdresse()" class="btn btn-danger">Supprimer Adresse</button>
+  </div>
+
+
+        </div>
+        
+
+           
+   
+       
+
+  <div *ngIf="formModified && +adresse.id>0">
+    <app-adresse-form
+      [adresse]="adresse">
+    </app-adresse-form>
+  </div>

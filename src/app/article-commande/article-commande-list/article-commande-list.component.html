@@ -1,0 +1,30 @@
+<h1> Tableau des articleCommandes </h1>
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Numéro</th>
+            <th scope="col">Article</th>
+            <th scope="col">Quantite</th>
+            <th scope="col">Commande</th>
+            
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let articleCommande of articleCommandes">
+            <td> <a href="http://localhost:4200/articleCommandes/{{ articleCommande.id }}"> {{ articleCommande.id }}</a></td>
+            <td>{{'id : ' + articleCommande.article.id + ', name : ' + articleCommande.article.name }}</td>
+            <td>{{ articleCommande.quantite }}</td>
+            <td>{{'id : ' + articleCommande.commande.id + ', numeroCommande : ' + articleCommande.commande.numeroCommande }}</td>
+
+            
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+

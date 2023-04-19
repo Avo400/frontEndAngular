@@ -1,0 +1,28 @@
+<app-commande-form *ngIf="commandeService.isCommandeInserted===false" #commandeForm
+    [weAreFromPasserCommande]="weAreFromPasserCommande"
+    (eventMostRecentCommande)="getMostRecentInsertedCommande($event)"
+    
+    >
+</app-commande-form>
+
+<!-- <div *ngIf="commandeService.isCommandeInserted===true">
+    une commande a été enregistrée 
+    id : {{commandeId}}
+    app-article-commande-form [crfeatedCommande]=
+</div> -->
+
+
+   <app-articleCommande-form  
+        [weAreFromPasserCommande]="weAreFromPasserCommande"
+        *ngIf="+createdCommande.id>0"
+        [createdCommande]="createdCommande"
+        (isStillNewArticleCommandeToAdd)="switchIsNewArticleCommandeToAdd($event)">
+    </app-articleCommande-form>
+ 
+
+
+
+
+
+
+

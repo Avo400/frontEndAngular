@@ -1,0 +1,15 @@
+#buttonContainer {
+    display: flex;
+    justify-content: flex-start; /* Can be changed in the live sample */
+  }
+
+  button {
+    margin: 5px;
+  }
+
+  a {
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
+  }
+
+  

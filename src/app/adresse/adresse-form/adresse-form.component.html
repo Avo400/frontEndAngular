@@ -1,0 +1,52 @@
+<div class="card my-5">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+        <div class="form-group">
+          <label for="name">Rue</label>
+          <input type="text" [(ngModel)]="adresse.rue" 
+            class="form-control" 
+            id="rue" 
+            name="rue" 
+            placeholder="Entrez le nom "
+            required #rue="ngModel">
+        </div>
+        
+        
+        <div class="form-group">
+          <label for="numeroRue">N° Rue</label>
+          <input type="text" [(ngModel)]="adresse.numeroRue" 
+            class="form-control" 
+            id="numeroRue" 
+            name="numeroRue" 
+            placeholder="Entrez votre prix unitaire"
+            required #numeroRue="ngModel">
+          
+        </div>
+
+        <div class="form-group">
+            <label for="codePostal"> Code postal</label>
+            <input type="text" [(ngModel)]="adresse.codePostal" 
+              class="form-control" 
+              id="codePostal" 
+              name="codePostal" 
+              placeholder="Entrez votre prix unitaire"
+              required #codePostal="ngModel">
+            
+          </div>
+
+          <div class="form-group">
+            <label for="ville"> Ville</label>
+            <input type="text" [(ngModel)]="adresse.ville" 
+              class="form-control" 
+              id="ville" 
+              name="ville" 
+              placeholder="Entrez votre prix unitaire"
+              required #ville="ngModel">
+            
+          </div>
+
+        <button type="submit" [disabled]="!userForm.form.valid" 
+          class="btn btn-info">Submit</button>
+      </form>
+    </div>
+  </div>

@@ -1,0 +1,12 @@
+#buttonsContainer {
+    display: flex;
+    justify-content: flex-start; /* Can be changed in the live sample */
+  }
+
+  button {
+    margin: 5px;
+  }
+
+  a {
+    text-decoration: none;
+  }

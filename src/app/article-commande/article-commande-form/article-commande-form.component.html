@@ -1,0 +1,71 @@
+<div class="card my-5">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+        
+       <div class="form-group"> 
+          <label for="article">Article :</label> 
+         {{articleCommande.article.id + ' '+ articleCommande.article.name}}
+         
+        <select class="form-control" id="adresse" name="adresse" [(ngModel)]="articleCommande.article" 
+            (ngModelChange)="onArticleChange($event)">
+            
+          <option *ngFor="let article of articles" [ngValue]="article" 
+            [attr.selected]="articleCommande.article.id===article.id ? true: null">
+            {{'id : '+ article.id + ', name :  '+ article.name}} 
+          </option>
+        </select>
+     
+        </div>
+        
+        
+        <div class="form-group">
+          <label for="Quantite">Quantite</label>
+          <input type="text" [(ngModel)]="articleCommande.quantite" 
+            class="form-control" 
+            id="quantite" 
+            name="quantite" 
+            placeholder="Entrez votre prix unitaire"
+            required #quantite="ngModel">
+          
+        </div>
+
+        <div  *ngIf="weAreFromPasserCommande">
+          id de la commande ajoutée = {{createdCommande.id}}
+        </div>
+
+          <div class="form-group"  *ngIf="!weAreFromPasserCommande"> 
+                <label for="article">Commande :</label> 
+               {{'id : ' + articleCommande.commande.id + ', numeroCommande :'+ articleCommande.commande.numeroCommande}} 
+            
+              
+              <select class="form-control" id="adresse" name="adresse" [(ngModel)]="articleCommande.commande" 
+                  (ngModelChange)="onArticleChange($event)">
+                  
+                <option *ngFor="let commande of commandes" [ngValue]="commande" 
+                  [attr.selected]="articleCommande.commande.id===commande.id ? true: null">
+                  {{'id :' + commande.id + ', numero commande :  '+ commande.numeroCommande}} 
+                </option>
+              </select>
+        
+          </div>
+
+         
+
+        <button type="submit"   *ngIf="!weAreFromPasserCommande" [disabled]="!userForm.form.valid" 
+          class="btn btn-info">Submit</button>
+       
+
+          <div *ngIf="weAreFromPasserCommande" id="buttonsContainer">
+            <button class="btn btn-info" > <a href="http://localhost:4200/passerCommandes"> Annuler </a> </button>
+            <button class="btn btn-info" (click)="addObjectArticleCommande()"> Ajouter un article </button>
+           <!--  <button class="btn btn-info" routerLink="/commande">
+              Ajouter un article toto
+            </button> -->
+            <button type="submit"  [disabled]="!userForm.form.valid" 
+            class="btn btn-info"> Enregistrer </button>
+
+            
+          </div>
+        </form>
+    </div>
+  </div>

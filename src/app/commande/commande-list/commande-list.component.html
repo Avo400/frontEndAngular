@@ -1,0 +1,29 @@
+<h1> Tableau des commandes </h1>
+
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Numéro</th>
+            <th scope="col">Numero de la commande</th>
+            <th scope="col">Date de la commande</th>
+            <th scope="col">Id  <a href="http://localhost:4200/clients">Client </a></th>
+           
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let commande of commandes">
+            <td> <a href="http://localhost:4200/commandes/{{ commande.id }}"> {{ commande.id }}</a></td>
+            <td>{{ commande.numeroCommande }}</td>
+            <td>{{ commande.dateCommande }}</td>
+            <td> <a>{{ commande.client.id }}</a></td>
+           
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+
